@@ -1,0 +1,26 @@
+<h1>
+    Upcoming Angular Events
+</h1>
+<hr>
+<!--< class="container md-2">
+    <h2>Angular Connect</h2>
+        Event Id: {{event.id}}<br>
+        Event name:{{event.name}}<br>
+        Event place:{{event.place}}<br>
+        Event Country:{{event.country}}<br>
+        <!--<button type="button" class="btn btn-primary mb-2" (click)="Clicked()">Click Me!</button>
+    </div>-->
+    <div class="container md-2 mb-2" *ngFor="let itr of event;index as code">
+        <h2>Angular Connect {{code+1}}</h2>
+            Event Id: {{itr.id}}<br>
+            Event name:{{itr?.name}}<br>
+            Event place:{{itr.place}}<br>
+            Event Country:{{itr.country}}<br>
+    </div>
+       <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary col-mid-3" data-toggle="modal" data-target="#exampleModal">
+    click here 
+  </button><label>(getEventBYId(3))</label>
+  
+  <!-- Modal -->
+  

@@ -1,0 +1,17 @@
+h1{
+    color: white;
+    margin-left: 2cm;
+}
+div{
+    background-color:darkslategrey;
+    color:white;
+}
+div:hover{
+    background-color: lightslategrey;
+}
+h2{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+hr{
+    border:white
+}
