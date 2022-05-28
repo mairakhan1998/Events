@@ -31,9 +31,4 @@ export class EventsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public getEventBYId(id:number){
-    return record.filter(record => record.id ===id )
-    
-  }
-
 }

@@ -1,0 +1,9 @@
+<div class="card" *ngIf="dish">Card
+    <div class="card-body">
+      <h5 class="card-title">{{selectedDish.name}}</h5>
+      <img class="card-img-top" src={{dish.image}} alt={{dish.name}}>
+      <p class="card-text">{{dish.description}}</p>
+      <a href="#" class="card-link">Like</a>
+      <a href="#" class="card-link">Share</a>
+    </div>
+  </div>
