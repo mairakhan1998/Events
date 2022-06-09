@@ -1,3 +1,15 @@
 nav{
-    background-color: lightslategray;
+    background-color: blue;
+    color: white;
+}
+.active{
+    background-color: whitesmoke;
+}
+.flex-spacer{
+    flex:1 1 auto
+}
+#login{
+    text-align: right;
+    color: white;
+    font-family: monospace;
 }

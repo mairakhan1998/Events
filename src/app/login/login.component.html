@@ -1,0 +1,20 @@
+<!-- Modal -->
+<p>{{user | json}}</p>
+  <form novalidate (ngSubmit)="onSubmit()" class="form-inline m-2">
+    <div class="form-group mx-sm-3 col-md-3">
+      <label for="staticEmail2" class="sr-only">Email</label>
+      <input type="text" class="form-control" id="staticEmail2" [(ngModel)]="user.username" name="username">
+    </div>
+    <div class="form-group mx-sm-3 col-md-3">
+      <label for="inputPassword2" class="sr-only">Password</label>
+      <input type="password" class="form-control" id="inputPassword2" placeholder="Password" [(ngModel)]="user.password" name="password">
+    </div>
+    <span class="flex-spacer mx-2">
+    <input type="checkbox" id="c1" [(ngModel)]="user.remember">
+    <label for="c1">Remember me</label> 
+    <button type="submit" class="btn btn-primary m-2 md-2">Confirm identity</button>
+    <button >Cancel</button>
+    <button type="submit" class="background-primary m-2 text-floral-white" >Login</button>
+  </span>
+  
+  </form>

@@ -1,0 +1,73 @@
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+    <div fxFlex>
+        <div>
+            <h3>About Us</h3>
+            <hr>
+        </div>
+    </div>
+
+    <div fxFlex>
+        <div fxLayout="column" fxLayout.gt-sm="row">
+            <div fxFlex="70">
+                <h2>Our History</h2>
+                <p>Started in 2010, Ristorante con Fusion quickly established itself as a culinary icon par excellence
+                    in Hong Kong. With its unique brand of world fusion cuisine that can be found nowhere else, it
+                    enjoys patronage from the A-list clientele in Hong Kong. Featuring four of the best three-star
+                    Michelin chefs in the world, you never know what will arrive on your plate the next time you visit
+                    us.</p>
+                <p>The restaurant traces its humble beginnings to <em>The Frying Pan</em>, a successful chain started by
+                    our CEO, Mr. Peter Pan, that featured for the first time the world's best cuisines in a pan.</p>
+            </div>
+
+            <div fxFlex="2">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h2 class="card-title">Facts At a Glance</h2>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <div class="card-text">
+                            <dl>
+                                <dt>Started</dt>
+                                <dd>3 Feb. 2013</dd>
+                                <dt>Major Stake Holder</dt>
+                                <dd>HK Fine Foods Inc.</dd>
+                                <dt>Last Year's Turnover</dt>
+                                <dd>$1,250,375</dd>
+                                <dt>Employees</dt>
+                                <dd>40</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div fxFlex>
+        <div class="card">
+            <blockquote>
+                <h3><b>You better cut the pizza in four pieces because
+                        I'm not hungry enough to eat six.</b></h3>
+                <footer>-- Yogi Berra,
+                    <cite>The Wit and Wisdom of Yogi Berra,
+                        P. Pepe, Diversion Books, 2014</cite>
+                </footer>
+            </blockquote>
+        </div>
+    </div>
+    <div fxFlex>
+        <h2>Corporate Leadership</h2>
+    </div>
+    <div fxFlex *ngIf="leaders">
+        <ul>
+            <li *ngFor="let leader of leaders"><img src={{leader.image}} alt={{leader.name}} height="50px" width="50px" class="rounded-circle">{{leader.name}}
+                <br>
+                <h5>{{leader.designation}}</h5>
+                <p>{{leader.description}}</p>
+            </li>
+        </ul>
+    </div>
+    <div [hidden]="leaders">
+        <ngx-spinner type="ball-scale-multiple"><h4>Loading please wait.....</h4></ngx-spinner>
+        
+    </div>
+</div>

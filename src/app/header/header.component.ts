@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Dish } from '../shared/dish';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  selectedDish:Dish | undefined;
+  dishes:Dish[] | undefined;
+
   constructor() { }
+
 
   ngOnInit(): void {
   }

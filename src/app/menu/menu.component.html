@@ -3,18 +3,23 @@
     <h3>Menu</h3>
     <hr>
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="let dish of dishes" (click)="onSelect(dish)">
+      <li class="list-group-item" *ngFor="let dish of dishes" [routerLink]="['/dishdetail',dish.id]">
+        
         <h3><img src={{dish.image}} alt={{dish.name}} height="200px" class="rounded-circle"> {{dish.name | uppercase}}
         </h3>
-        <h4>{{SelectedDish.description}}</h4>
+        <h4>{{dish.description}}</h4>
       </li>
+      <li class="list-group-item"><h2>ALBERTO SOMAYYA EC</h2><h3><img src="/assets/images/alberto.png" alt="albert" height="200px" class="rounded-circle">
+      </h3><h4>Excecutive Chef</h4>
+    <p>Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences.</p></li>
     </ul>
 
   </div>
+  
 </div>
-<div class="container" fxLayout="column" fxLayoutGap="10px">
-  <app-dish-detail [dish]="SelectedDish"></app-dish-detail>
-</div>
+<!--<div class="container" fxLayout="column" fxLayoutGap="10px">
+  <app-dish-detail [dish]="selectedDish"></app-dish-detail>
+</div>-->
 
 
 
