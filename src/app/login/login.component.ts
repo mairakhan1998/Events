@@ -10,16 +10,25 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   user = {username:'',password:'',remember:false};
+  valid!:boolean;
 
-  /*name = (event:any):any =>{
-
-  }*/
+  username = (event:any):any =>{
+    if(this.user.username!='munshat'){
+      this.valid=false;
+    }
+    else{
+      this.valid=true;
+    }
+  }
 
   public onSubmit(){
     console.log("User",this.user);
+    console.log(this.valid);
   }
 
   constructor() { }
+
+
 
 
 

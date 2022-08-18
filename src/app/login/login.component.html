@@ -1,20 +1,48 @@
 <!-- Modal -->
 <p>{{user | json}}</p>
-  <form novalidate (ngSubmit)="onSubmit()" class="form-inline m-2">
-    <div class="form-group mx-sm-3 col-md-3">
-      <label for="staticEmail2" class="sr-only">Email</label>
-      <input type="text" class="form-control" id="staticEmail2" [(ngModel)]="user.username" name="username">
-    </div>
-    <div class="form-group mx-sm-3 col-md-3">
-      <label for="inputPassword2" class="sr-only">Password</label>
-      <input type="password" class="form-control" id="inputPassword2" placeholder="Password" [(ngModel)]="user.password" name="password">
-    </div>
-    <span class="flex-spacer mx-2">
+<form novalidate class="form-inline m-2">
+  <div class="form-group mx-sm-3 col-md-3">
+    <label for="staticEmail2" class="sr-only">Email</label>
+    <input type="text" class="form-control" id="staticEmail2" [(ngModel)]="user.username" name="username">
+  </div>
+  <div class="form-group mx-sm-3 col-md-3">
+    <label for="inputPassword2" class="sr-only">Password</label>
+    <input type="password" class="form-control" id="inputPassword2" placeholder="Password" [(ngModel)]="user.password"
+      name="password">
+  </div>
+  <span class="flex-spacer mx-2">
     <input type="checkbox" id="c1" [(ngModel)]="user.remember">
-    <label for="c1">Remember me</label> 
+    <label for="c1">Remember me</label>
     <button type="submit" class="btn btn-primary m-2 md-2">Confirm identity</button>
-    <button >Cancel</button>
-    <button type="submit" class="background-primary m-2 text-floral-white" >Login</button>
+    <button>Cancel</button>
+    <button type="button" class="background-primary m-2 text-floral-white" (click)="username($event)" (click)="onSubmit()" >Login</button>
   </span>
-  
-  </form>
+  {{valid}}
+
+</form>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

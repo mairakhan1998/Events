@@ -1,0 +1,39 @@
+<div fxFlex fxFlexOffset="20px" class="form-size text-size-lg">
+    <h3 class="ms-2">Send us your feedback</h3>
+
+
+    <form novalidate (formGroup)="feedbackForm" (ngSubmit)="onSubmit()" class="col-md-3">
+        <input required formControlName="firstname" placeholder="First Name" type="text" class="form-control mb-2 ms-2 col-3">
+        <div *ngIf="firstname.errors?.['required']">
+            Name is required.
+          </div>
+          <div *ngIf="firstname.errors?.['minlength']">
+            Name must be at least 3 characters long.
+          </div>
+
+
+
+
+        <input required formControlName="lastame" [class.border-danger]="!errorList.isLastnameValid"
+            placeholder="Last Name" type="text" class="form-control mb-2 ms-2 col-3"
+            (focusout)="lastname_focusout($event)" (ngModel)="lastname">
+        <input required formControlName="telnum" [class.border-danger]="!errorList.isTelnumValid"
+            placeholder="Telephone" type="tel" class="form-control  mb-2 ms-2 col-3"
+            (focuseout)="telNum_focusout($event)" (ngModel)="telNum">
+        <input required formConltrolName="e-mail" placeholder="E-mail" type="text"
+            class="form-control mb-2 ms-2 col-3">
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>May we contact you
+        <select class="form-select col-3" placeholder="How?" formControlNmae="ContactType">Contact Type
+            <option *ngFor="let ctype of contactType" value="ctype"> {{ctype}}</option>
+        </select>
+
+        <button class="btn btn-success float-end  my-1">Submit</button>
+        <h3>{{message}}</h3>
+        <div class="mb-2 ms-2">Your feedback</div>
+
+        <textarea class="m-2 col-md-3"></textarea>
+    </form>
+</div>

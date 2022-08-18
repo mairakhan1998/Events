@@ -13,7 +13,16 @@ import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { FormBuilder , FormControl,FormGroup , FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule  } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule  } from '@angular/forms';
+import { ContactComponent } from './contact/contact.component';
+import { baseurl } from './shared/baseURL';
+import { ContentComponent } from './content/content.component';
+import { HighlightDirective } from './shared/directives/highlight.directive';
+import {style, trigger, state, animate, transition } from '@angular/animations';
+import { DishServiceService } from './services/dish-service.service';
+import { LeadersService } from './services/leaders.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +32,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     FooterComponent,
     AboutComponent,
-    LoginComponent
+    LoginComponent,
+    ContentComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
@@ -31,12 +42,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FlexLayoutModule,
     NgxSpinnerModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   entryComponents:[
     LoginComponent
   ],
-  providers: [
+  providers: [ DishServiceService, LeadersService, {provide:'baseURL',useValue:baseurl}
   ],
   bootstrap: [AppComponent]
 })

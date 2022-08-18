@@ -3,9 +3,9 @@
     <h3>Menu</h3>
     <hr>
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="let dish of dishes" [routerLink]="['/dishdetail',dish.id]">
+      <li class="list-group-item" *ngFor="let dish of dishes" [routerLink]="['/dishdetail',dish.id]" appHighlight>
         
-        <h3><img src={{dish.image}} alt={{dish.name}} height="200px" class="rounded-circle"> {{dish.name | uppercase}}
+        <h3><img src="{{ dish.image }}" alt={{dish.name}} height="200px" class="rounded-circle"> {{dish.name | uppercase}}
         </h3>
         <h4>{{dish.description}}</h4>
       </li>
@@ -18,7 +18,7 @@
   
 </div>
 <!--<div class="container" fxLayout="column" fxLayoutGap="10px">
-  <app-dish-detail [dish]="selectedDish"></app-dish-detail>
+  <app-dish-detail [selectedDish]="selectedDish"></app-dish-detail>
 </div>-->
 
 
